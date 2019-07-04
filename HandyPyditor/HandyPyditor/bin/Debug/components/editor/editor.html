@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="resources/css/sweetalert2.min.css"></link>
+    <link rel="stylesheet" href="resources/css/editor.css"></link>
+    <link rel="stylesheet" href="resources/css/tippy.css">
+</head>
+
+<body>
+    <div class="border bottom">
+        <ul id="toolBar">
+            <li id="newFile" title="新建脚本"></li>
+            <li id="openFile" title="打开文件">
+                <input type="file" id="file-open" accept=".py">
+            </li>
+            <li id="saveFile" title="保存 (Ctrl+S)"></li>
+            <li id="saveAsFile" title="另存为 (Ctrl+S)"></li>
+            <li class="separator"></li>
+            <li id="undo" title="撤销 (Ctrl+Z)"></li>
+            <li id="redo" title="重做 (Ctrl+Y)"></li>
+            <li class="separator"></li>
+            <li id="run" title="调试 (F5)"></li>
+            <li id="stop" title="停止调试 (Shift+F5)" style="display: none;"></li>
+            <li class="separator"></li>
+            <li id="find" title="查找 (Ctrl+F)"></li>
+            <li class="separator"></li>
+            <li id="formatCode" title="格式化文件"></li>
+            <li id="commentCode" title="注释选中行"></li>
+            <li id="unCommentCode" title="取消对选中行的注释"></li>
+            <li class="separator"></li>
+            <li id="tooltipConfig" title="关键字提示配置"></li>
+            <li id="variableConfig" title="变量智能提示配置"></li>
+            <li id="snippetConfig" title="代码片段配置"></li>
+        </ul>
+    </div>
+
+    <div id="editor"></div>
+
+    <script src="js/temp.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/ace.js"></script>
+    <script src="js/ext-language_tools.js"></script>
+    <script src="js/mode-python.js"></script>
+    <script src="js/token_tooltip.js"></script>
+    <script src="js/ext-modelist.js"></script>
+    <script src="js/file_drop.js"></script>
+    <script src="js/tippy.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/FileSaver.js"></script>
+    <script src="js/init.js"></script>
+</body>
+
+</html>

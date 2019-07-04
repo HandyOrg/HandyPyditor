@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandyPyditor", "HandyPyditor\HandyPyditor.csproj", "{AD240434-A8F7-40C6-93EA-D548501D7BFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD240434-A8F7-40C6-93EA-D548501D7BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD240434-A8F7-40C6-93EA-D548501D7BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD240434-A8F7-40C6-93EA-D548501D7BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD240434-A8F7-40C6-93EA-D548501D7BFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {194E8721-9A03-402F-BA20-6AE762A5B038}
+	EndGlobalSection
+EndGlobal

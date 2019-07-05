@@ -40,9 +40,22 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
     <Reference Include="HandyControl, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\HandyControl.2.0.0\lib\net462\HandyControl.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Toolkit.Wpf.UI.Controls.WebView, Version=5.1.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Toolkit.Wpf.UI.Controls.WebView.5.1.1\lib\net462\Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll</HintPath>
     </Reference>
@@ -58,12 +71,19 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Python.Runtime">
+      <HintPath>bin\Debug\components\python\Python.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -72,6 +92,28 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\InfoTipCtl.xaml.cs">
+      <DependentUpon>InfoTipCtl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\MethodInfoCtl.xaml.cs">
+      <DependentUpon>MethodInfoCtl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\VariableInfoCtl.xaml.cs">
+      <DependentUpon>VariableInfoCtl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Config\CustomConfig.cs" />
+    <Compile Include="Control\IBrowser.cs" />
+    <Compile Include="Control\BrowserWrapper.cs" />
+    <Compile Include="Data\Config\EditorConfig.cs" />
+    <Compile Include="Data\EditorUiInfo.cs" />
+    <Compile Include="Data\MessageToken.cs" />
+    <Compile Include="Data\Model\SaveInfoModel.cs" />
+    <Compile Include="Data\Config\TokenConfig.cs" />
+    <Compile Include="Data\Config\VariableConfig.cs" />
+    <Compile Include="Data\Model\TokenClassModel.cs" />
+    <Compile Include="Pyditor.xaml.cs">
+      <DependentUpon>Pyditor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -80,7 +122,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Lang.resx</DependentUpon>
     </Compile>
+    <Compile Include="Tools\FileHelper.cs" />
     <Compile Include="Tools\Win32.cs" />
+    <Compile Include="Window\AddMethodWindow.xaml.cs">
+      <DependentUpon>AddMethodWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\AddVariableIndexWindow.xaml.cs">
+      <DependentUpon>AddVariableIndexWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Config\ConfigWindow.cs" />
+    <Compile Include="Window\Config\CustomConfigWindow.xaml.cs">
+      <DependentUpon>CustomConfigWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Config\SnippetConfigWindow.xaml.cs">
+      <DependentUpon>SnippetConfigWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Config\TooltipConfigWindow.xaml.cs">
+      <DependentUpon>TooltipConfigWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\DebugTutorialWindow.xaml.cs">
+      <DependentUpon>DebugTutorialWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\MethodInfoWindow.xaml.cs">
+      <DependentUpon>MethodInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\NewFileWindow.xaml.cs">
+      <DependentUpon>NewFileWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Config\VariableConfigWindow.xaml.cs">
+      <DependentUpon>VariableConfigWindow.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -111,6 +182,22 @@
     <Resource Include="Resources\Img\UncommentCode_16x.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Control\InfoTipCtl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\MethodInfoCtl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\VariableInfoCtl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pyditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Basic\Basic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -127,6 +214,42 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Window\AddMethodWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\AddVariableIndexWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\Config\CustomConfigWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\Config\SnippetConfigWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\Config\TooltipConfigWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\DebugTutorialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\MethodInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\NewFileWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\Config\VariableConfigWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Langs\Lang.resx">
@@ -135,10 +258,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Control\" />
-    <Folder Include="Data\" />
     <Folder Include="Tools\Converters\" />
-    <Folder Include="Window\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

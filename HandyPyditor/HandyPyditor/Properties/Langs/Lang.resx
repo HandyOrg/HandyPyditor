@@ -100,4 +100,7 @@
   <data name="FileUnsaved" xml:space="preserve">
     <value>未保存</value>
   </data>
+  <data name="ScriptIsOpen" xml:space="preserve">
+    <value>脚本已打开</value>
+  </data>
 </root>

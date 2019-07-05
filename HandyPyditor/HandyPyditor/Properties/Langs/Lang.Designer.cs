@@ -68,5 +68,14 @@ namespace HandyPyditor.Properties.Langs {
                 return ResourceManager.GetString("FileUnsaved", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   查找类似 脚本已打开 的本地化字符串。
+        /// </summary>
+        public static string ScriptIsOpen {
+            get {
+                return ResourceManager.GetString("ScriptIsOpen", resourceCulture);
+            }
+        }
     }
 }
